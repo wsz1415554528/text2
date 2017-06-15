@@ -12,25 +12,41 @@ int main(int argc, const char * argv[])
 {
     
     FILE *fr,*fw;
-    fr=fopen("//Users//w20161104602//Desktop//test//input.txt","r+");
-    fw=fopen("//Users//w20161104602//Desktop//test//output.txt","w");
-    int a[10];
+    fr=fopen("//Users//w20161104602//Desktop//text2//input.txt","r");
+    fw=fopen("//Users//w20161104602//Desktop//text2//output.txt","w");
+    int a[16];
     int q,w,e;
-    for(q=0; q<10; q++)
-        fscanf(fr,"%d",&a[q]);
-    for(w=0;w<9; w++)
-        for(q=0; q<9-w; q++)
+    if(fr==NULL)
+    {
+        printf("该文件不存在");
+    }
+    else
+    {
+        for(q=0; q<10; q++)
         {
-            if(a[q]>a[q+1])
-            {
-                e=a[q];
-                a[q]=a[q+1];
-                a[q+1]=e;
-            }
+            fscanf(fr,"%d",&a[q]);
         }
-    for(q=0;q<10;q++)
-        fprintf(fw,"%d ",a[q]);
-    printf("\n");
+        
+        for(w=0;w<9; w++)
+            for(q=0; q<9-w; q++)
+            {
+                if(a[q]>a[q+1])
+                {
+                    e=a[q];
+                    a[q]=a[q+1];
+                    a[q+1]=e;
+                }
+            }
+        for(q=0;q<10;q++)
+        {
+            printf("%d ",a[q]);
+            fprintf(fw,"%d ",a[q]);
+        }
+        fprintf(fw,"\n");
+        printf("\n");
+
+    }
+    
     return 0;
     
     
