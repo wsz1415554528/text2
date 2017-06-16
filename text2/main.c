@@ -22,22 +22,28 @@ int main(int argc, const char * argv[])
     }
     else
     {
-        for(q=0; q<10; q++)
+        while(fscanf(fr,"%d",&q)!=EOF)
         {
-            fscanf(fr,"%d",&a[q]);
-        }
-        
-        for(w=0;w<9; w++)
-            for(q=0; q<9-w; q++)
+            for(q=0; q<10; q++)
             {
-                if(a[q]>a[q+1])
-                {
-                    e=a[q];
-                    a[q]=a[q+1];
-                    a[q+1]=e;
-                }
+                fscanf(fr,"%d",&a[q]);
             }
-        for(q=0;q<10;q++)
+            
+            for(w=0;w<9; w++)
+            {
+                for(q=0; q<9-w; q++)
+                {
+                    if(a[q]>a[q+1])
+                    {
+                        e=a[q];
+                        a[q]=a[q+1];
+                        a[q+1]=e;
+                    }
+                }
+       
+        
+        }
+                for(q=0;q<10;q++)
         {
             printf("%d ",a[q]);
             fprintf(fw,"%d ",a[q]);
@@ -46,7 +52,10 @@ int main(int argc, const char * argv[])
         printf("\n");
 
     }
-    
+    fclose(fr);
+    fclose(fw);
+}
+
     return 0;
     
     
