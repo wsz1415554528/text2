@@ -2,6 +2,15 @@
 //  main.c
 //  text2
 //
+//  Created by w20161104602 on 2017/6/19.
+//  Copyright © 2017年 w20161104602. All rights reserved.
+//
+
+#include "main.h"
+//
+//  main.c
+//  text2
+//
 //  Created by w20161104602 on 2017/6/13.
 //  Copyright © 2017年 w20161104602. All rights reserved.
 //
@@ -40,23 +49,60 @@ int main(int argc, const char * argv[])
                         a[q+1]=e;
                     }
                 }
-       
-        
+                
+                
+            }
+            for(q=0;q<10;q++)
+            {
+                printf("%d ",a[q]);
+                fprintf(fw,"%d ",a[q]);
+            }
+            fprintf(fw,"\n");
+            printf("\n");
+            
         }
-                for(q=0;q<10;q++)
-        {
-            printf("%d ",a[q]);
-            fprintf(fw,"%d ",a[q]);
-        }
-        fprintf(fw,"\n");
-        printf("\n");
-
+        fclose(fr);
+        fclose(fw);
     }
-    fclose(fr);
-    fclose(fw);
-}
-
+    
     return 0;
     
     
 }
+char time[10],gps,latitude1,longitude1,year[10],s[5];
+double latitude,longitude,v,course;
+FILE *fp2;
+fp2=fopen("//User//s20161104602//Desktop//test1//GPS)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
